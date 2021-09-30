@@ -37,7 +37,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // The pulse width of the LEDs driving determines the resolution of
 // the ADC (which is a Sigma-Delta).
-// set HIGHRES_MODE to true only when setting PULSE_WIDTH to MAX30102_SPC_PW_1600US_16BITS
+// set HIGHRES_MODE to true only when setting PULSE_WIDTH to MAX30102_SPC_PW_411US_18BITS
 #define PULSE_WIDTH                         MAX30102_SPC_PW_411US_18BITS
 #define HIGHRES_MODE                        true
 
