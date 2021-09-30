@@ -32,10 +32,8 @@ class  FilterBuLp1
 		{
 			v[0]=0.0;
 		}
-	private:
-		float v[2];
-	public:
-		float step(float x) //class II
+	
+		float step(float x)
 		{
 			v[0] = v[1];
 			v[1] = (2.452372752527856026e-1 * x)
@@ -43,6 +41,9 @@ class  FilterBuLp1
 			return
 				 (v[0] + v[1]);
 		}
+	
+	private:
+		float v[2];
 };
 
 // http://sam-koblenski.blogspot.de/2015/11/everyday-dsp-for-programmers-dc-and.html
@@ -52,6 +53,7 @@ public:
 	DCRemover() : alpha(0), dcw(0)
 	{
 	}
+	
 	DCRemover(float alpha_) : alpha(alpha_), dcw(0)
 	{
 	}
