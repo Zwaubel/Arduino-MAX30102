@@ -70,8 +70,7 @@ typedef enum FIFO_A_Full {
 	MAX30102_FC_FIFO_A_FULL_12		= 0xC,
 	MAX30102_FC_FIFO_A_FULL_15		= 0xF,
 	MAX30102_FC_FIFO_A_FULL_13		= 0xD,
-	MAX30102_FC_FIFO_A_FULL_14		= 0xE
-	
+	MAX30102_FC_FIFO_A_FULL_14		= 0xE	
 } FIFO_A_Full;
 
 typedef enum SampleAverage {
@@ -89,8 +88,8 @@ typedef enum SampleAverage {
 #define MAX30102_MC_RESET                       (1 << 6)
 #define MAX30102_MC_SHDN                        (1 << 7)
 typedef enum Mode {
-    MAX30102_MODE_HRONLY    			= 0x02,
-    MAX30102_MODE_SPO2_HR   			= 0x03,
+	MAX30102_MODE_HRONLY    		= 0x02,
+    	MAX30102_MODE_SPO2_HR   		= 0x03,
 	MAX30102_MODE_MULTI   			= 0x07
 } Mode;
 
@@ -107,21 +106,21 @@ typedef enum ADCRange {
 } ADCRange;
 
 typedef enum SamplingRate {
-    MAX30102_SAMPRATE_50HZ      		= 0x00,
-	MAX30102_SAMPRATE_100HZ     		= 0x01,
-	MAX30102_SAMPRATE_167HZ     		= 0x02,
+    	MAX30102_SAMPRATE_50HZ      		= 0x00,
+	MAX30102_SAMPRATE_50HZ     		= 0x01,
+	MAX30102_SAMPRATE_100HZ     		= 0x02,
 	MAX30102_SAMPRATE_200HZ     		= 0x03,
 	MAX30102_SAMPRATE_400HZ    		= 0x04,
-	MAX30102_SAMPRATE_600HZ     		= 0x05,
-	MAX30102_SAMPRATE_800HZ     		= 0x06,
-	MAX30102_SAMPRATE_1000HZ    		= 0x07
+	MAX30102_SAMPRATE_800HZ     		= 0x05,
+	MAX30102_SAMPRATE_1600HZ     		= 0x06,
+	MAX30102_SAMPRATE_3200HZ    		= 0x07
 } SamplingRate;
 
 typedef enum LEDPulseWidth {
-    MAX30102_SPC_PW_69US_15BITS    		= 0x00,
-    MAX30102_SPC_PW_118US_16BITS   		= 0x01,
-    MAX30102_SPC_PW_215US_17BITS    		= 0x02,
-    MAX30102_SPC_PW_411US_18BITS   		= 0x03
+    	MAX30102_SPC_PW_69US_15BITS    		= 0x00,
+    	MAX30102_SPC_PW_118US_16BITS   		= 0x01,
+    	MAX30102_SPC_PW_215US_17BITS    	= 0x02,
+    	MAX30102_SPC_PW_411US_18BITS   		= 0x03
 } LEDPulseWidth;
 
 // LED Configuration registers
