@@ -1,4 +1,4 @@
-# Arduino-MAX30102
+# Arduino-[MAX30102](https://datasheets.maximintegrated.com/en/ds/MAX30102.pdf)
 
 Arduino library for the Maxim Integrated MAX30102 oximetry / heart rate sensor by Shivam Gupta <gupta.shivam1996@gmail.com>
 
@@ -23,7 +23,7 @@ Use it at your sole risk.
 
 ## Hardware
 
-This library has been tested with two different breakout boards for MAX30102
+This library has been tested with two different breakout boards for [MAX30102](https://datasheets.maximintegrated.com/en/ds/MAX30102.pdf)
 
 https://www.amazon.in/xcluma-MAX30102-Upgraded-Ultra-Low-Compatible/dp/B07TZCNG2G/ref=sr_1_1?crid=3H93UW42TRQWY&dchild=1&keywords=xcluma+max30102&qid=1601127280&sprefix=xcluma+max%2Caps%2C299&sr=8-1
 
@@ -58,7 +58,7 @@ This high level class sets up the sensor and data processing pipelines in order 
 offer a very simple interface to the data:
 
  * Sampling frequency set to 100Hz
- * 1600uS pulse width, full sampling 16bit dynamic
+ * 411 pulse width, full sampling 18bit dynamic
  * IR LED current set to 50mA
  * Heart-rate + SpO2 mode
 
