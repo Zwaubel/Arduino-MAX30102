@@ -28,12 +28,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "CircularBuffer.h"
 #include "MAX30102_Registers.h"
 
-#define DEFAULT_MODE               	MAX30102_MODE_HRONLY
+#define DEFAULT_MODE               		MAX30102_MODE_HRONLY
 #define DEFAULT_SAMPLING_RATE       	MAX30102_SAMPRATE_100HZ
 #define DEFAULT_PULSE_WIDTH         	MAX30102_SPC_PW_118US_16BITS
 #define DEFAULT_RED_LED_CURRENT     	0xff
-#define DEFAULT_IR_LED_CURRENT		0xff
-#define DEFAULT_ADC_RANGE		MAX30102_ADCRange_8192
+#define DEFAULT_IR_LED_CURRENT			0xff
+#define DEFAULT_ADC_RANGE				MAX30102_ADCRange_8192
 //Max30102 part ID is 0x15
 #define EXPECTED_PART_ID            	0x15
 //Max30102 fifo size is 32
@@ -42,42 +42,43 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define I2C_BUS_SPEED               	400000UL
 
 typedef struct {
-	uint16_t ir;
-    	uint16_t red;
+	uint32_t ir;
+	uint32_t red;
 } SensorReadout;
 
 class MAX30102 {
 public:
-    	MAX30102();
-    	bool begin();
-    	void setMode(Mode mode);
-    	void setLedsPulseWidth(LEDPulseWidth ledPulseWidth);
-    	void setSamplingRate(SamplingRate samplingRate);
+	MAX30102();
+	
+	bool begin();
+	void setMode(Mode mode);
+	void setLedsPulseWidth(LEDPulseWidth ledPulseWidth);
+	void setSamplingRate(SamplingRate samplingRate);
 	void setRangeADC(ADCRange adcRange);
 	void setRedLedCurrent(uint8_t redLedCurrent);
 	void setIRLedCurrent(uint8_t IRLedCurrent);
-    	void setSlot1(SlotSetting slotsetting);
+	void setSlot1(SlotSetting slotsetting);
 	void setSlot2(SlotSetting slotsetting);
 	void setSlot3(SlotSetting slotsetting);
 	void setSlot4(SlotSetting slotsetting);
-    	void setHighresModeEnabled(bool enabled);
-    	void update();
-	bool getRawValues(uint16_t *ir, uint16_t *red);
-    	void resetFifo();
+	void setHighresModeEnabled(bool enabled);
+	void update();
+	bool getRawValues(uint32_t *ir, uint32_t *red);
+	void resetFifo();
 	void startTemperatureSampling();
-    	bool isTemperatureReady();
-    	float retrieveTemperature();
-    	void shutdown();
-    	void resume();
-    	uint8_t getPartId();
+	bool isTemperatureReady();
+	float retrieveTemperature();
+	void shutdown();
+	void resume();
+	uint8_t getPartId();
 
 private:
-    	CircularBuffer<SensorReadout, RINGBUFFER_SIZE> readoutsBuffer;
+	CircularBuffer<SensorReadout, RINGBUFFER_SIZE> readoutsBuffer;
 
-    	uint8_t readRegister(uint8_t address);
-    	void writeRegister(uint8_t address, uint8_t data);
-    	void burstRead(uint8_t baseAddress, uint8_t *buffer, uint8_t length);
-    	void readFifoData();
+	uint8_t readRegister(uint8_t address);
+	void writeRegister(uint8_t address, uint8_t data);
+	void burstRead(uint8_t baseAddress, uint8_t *buffer, uint8_t length);
+	void readFifoData();
 };
 
 #endif

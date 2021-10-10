@@ -108,7 +108,7 @@ void PulseOximeter::resume()
 
 void PulseOximeter::checkSample()
 {
-    uint16_t rawIRValue, rawRedValue;
+    uint32_t rawIRValue, rawRedValue;
 
     // Dequeue all available samples, they're properly timed by the HRM
     while (hrm.getRawValues(&rawIRValue, &rawRedValue)) {
