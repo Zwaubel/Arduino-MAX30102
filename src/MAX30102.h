@@ -54,6 +54,7 @@ public:
 	void setMode(Mode mode);
 	void setLedsPulseWidth(LEDPulseWidth ledPulseWidth);
 	void setSamplingRate(SamplingRate samplingRate);
+	void setSampleAveraging(SampleAverage sampleAverage);
 	void setRangeADC(ADCRange adcRange);
 	void setRedLedCurrent(uint8_t redLedCurrent);
 	void setIRLedCurrent(uint8_t IRLedCurrent);

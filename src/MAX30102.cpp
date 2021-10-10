@@ -64,6 +64,12 @@ void MAX30102::setSamplingRate(SamplingRate samplingRate)
     writeRegister(MAX30102_REG_SPO2_CONFIGURATION, (previous & 0xe3) | (samplingRate << 2));
 }
 
+void MAX30102::setSampleAveraging(SampleAverage sampleAverage)
+{
+    uint8_t previous = readRegister(MAX30102_REG_FIFO_CONFIG);
+    writeRegister(MAX30102_REG_FIFO_CONFIG, (previous & 0x1f) | (sampleAverage << 5));
+}
+
 void MAX30102::setRedLedCurrent(uint8_t redLedCurrent)
 {
     writeRegister(MAX30102_REG_LED_RED_PA, redLedCurrent);
