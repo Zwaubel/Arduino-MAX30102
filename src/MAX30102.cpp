@@ -180,8 +180,8 @@ void MAX30102::readFifoData()
         for (uint8_t i=0 ; i < toRead ; ++i) {
             // Warning: the values are always left-aligned
             readoutsBuffer.push({
-                    .ir = 	(uint16_t)(((buffer[i * 3] & 0x3) << 16)		| (buffer[i * 3 + 1] << 8) 	| buffer[i * 3 + 2]),
-                    .red = 	(uint16_t)(((buffer[i * 3 + 3] & 0x3) << 16) 	| buffer[i * 3 + 4] << 8) 	| buffer[i * 3 + 5]});
+                    .red 	= (uint16_t)(((buffer[i * 3] & 0x3) << 16)		| (buffer[i * 3 + 1] << 8) 	| buffer[i * 3 + 2]),
+                    .ir 	= (uint16_t)(((buffer[i * 3 + 3] & 0x3) << 16) 	| buffer[i * 3 + 4] << 8) 	| buffer[i * 3 + 5]});
         }
     }
 }

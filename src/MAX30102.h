@@ -42,8 +42,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define I2C_BUS_SPEED               	400000UL
 
 typedef struct {
-	uint32_t ir;
 	uint32_t red;
+	uint32_t ir;
 } SensorReadout;
 
 class MAX30102 {
